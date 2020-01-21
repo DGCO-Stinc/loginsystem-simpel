@@ -20,7 +20,7 @@ class Login
 
     public function filterVars()
     {
-        $this->email = strtolower(filter_var($_REQUEST['email'],FILTER_SANITIZE_STRING));
+        $this->email = strtolower(filter_var($_REQUEST['email'],FILTER_VALIDATE_EMAIL));
         $this->pwd = md5(filter_var($_REQUEST['pwd'],FILTER_SANITIZE_STRING));
         if(isset($_REQUEST['name']))
         {
